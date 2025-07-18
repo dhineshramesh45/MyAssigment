@@ -9,19 +9,21 @@ public class Loginpage {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// launch the browser
+		// Initialize Chrome browser instance
+
 		ChromeDriver driver=new ChromeDriver();
-		//upload the url
+		// Navigate to the application URL
 		driver.get("https://www.saucedemo.com/v1/");
-		//manage screen
+		// Set implicit wait timeout for locating elements
 		driver.manage().window().fullscreen();
-		//wait to load
+		// Set implicit wait timeout for locating elements
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		//find the element in dom  id for user name
+		// Enter username using element identified by ID
 		driver.findElement(By.id("user-name")).sendKeys("standard_user");
-		//find the element in dom id for password
+		// Enter password using element identified by ID
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
-		//find the element in dom id for login
+		// Click the login button identified by ID
 		driver.findElement(By.id("login-button")).click();
 		
 		
